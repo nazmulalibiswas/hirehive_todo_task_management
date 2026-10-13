@@ -1,0 +1,46 @@
+{% extends 'master/base.html'%}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+  <div class="col-md-6">
+    <div class="card shadow-sm">
+      <div class="card-header">
+        <h4 class="mb-0">Register Your Account</h4>
+      </div>
+      <div class="card-body">
+        <form method="POST">
+          {% csrf_token %}
+
+          <div class="mb-3">
+            <label for="id_full_name" class="form-label">Full Name</label>
+            <input type="text" class="form-control" name="full_name" id="id_full_name" placeholder="Enter your full name">
+          </div>
+
+          <div class="mb-3">
+            <label for="id_username" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" id="id_username" placeholder="Choose a username" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="id_email" class="form-label">Email Address</label>
+            <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter your email">
+          </div>
+
+          <div class="mb-3">
+            <label for="id_password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" id="id_password" placeholder="Enter password (min 8 characters)" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="id_confirm_password" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" name="confirm_password" id="id_confirm_password" placeholder="Re-enter password" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Register</button>
+        </form>
+        <p class="text-center mt-3">Already have an account? <a href="{% url 'login_page' %}">Login here</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

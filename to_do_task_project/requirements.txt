@@ -1,0 +1,7 @@
+# Django
+Django>=6.0,<7.0
+django-crispy-forms>=2.0
+crispy-bootstrap5>=2024.2
+
+# Production server
+gunicorn>=21.2.0
